@@ -1,660 +1,875 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>CV TRI ARIYANTO S.Kom.</title>
-		<meta name="description" content="CV TRI ARIYANTO" />
-		<meta name="keywords" content="CV TRI ARIYANTO" />
-		<meta name="author" content="tray"/>
-		
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<!--CSS-->
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
 
-		<script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>CV TRI ARIYANTO S.Kom.</title>
+	<meta name="description" content="CV TRI ARIYANTO" />
+	<meta name="keywords" content="CV TRI ARIYANTO" />
+	<meta name="author" content="tray" />
 
-		if (document.images) { 
-			button1Red = new Image 
-			button1Blue = new Image 
-			button2Red = new Image 
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<style>
+		/**
+ * ==============================================
+ * Dot Pulse
+ * ==============================================
+ */
+		.dot-pulse {
+			position: relative;
+			left: -9999px;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background-color: #9880ff;
+			color: #9880ff;
+			box-shadow: 9999px 0 0 -5px #9880ff;
+			animation: dotPulse 1.5s infinite linear;
+			animation-delay: .25s;
+		}
+
+		.dot-pulse::before,
+		.dot-pulse::after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background-color: #9880ff;
+			color: #9880ff;
+		}
+
+		.dot-pulse::before {
+			box-shadow: 9984px 0 0 -5px #9880ff;
+			animation: dotPulseBefore 1.5s infinite linear;
+			animation-delay: 0s;
+		}
+
+		.dot-pulse::after {
+			box-shadow: 10014px 0 0 -5px #9880ff;
+			animation: dotPulseAfter 1.5s infinite linear;
+			animation-delay: .5s;
+		}
+
+		@keyframes dotPulseBefore {
+			0% {
+				box-shadow: 9984px 0 0 -5px #9880ff;
+			}
+
+			30% {
+				box-shadow: 9984px 0 0 2px #9880ff;
+			}
+
+			60%,
+			100% {
+				box-shadow: 9984px 0 0 -5px #9880ff;
+			}
+		}
+
+		@keyframes dotPulse {
+			0% {
+				box-shadow: 9999px 0 0 -5px #9880ff;
+			}
+
+			30% {
+				box-shadow: 9999px 0 0 2px #9880ff;
+			}
+
+			60%,
+			100% {
+				box-shadow: 9999px 0 0 -5px #9880ff;
+			}
+		}
+
+		@keyframes dotPulseAfter {
+			0% {
+				box-shadow: 10014px 0 0 -5px #9880ff;
+			}
+
+			30% {
+				box-shadow: 10014px 0 0 2px #9880ff;
+			}
+
+			60%,
+			100% {
+				box-shadow: 10014px 0 0 -5px #9880ff;
+			}
+		}
+	</style>
+
+	<script>
+
+		if (document.images) {
+			button1Red = new Image
+			button1Blue = new Image
+			button2Red = new Image
 			button2Blue = new Image
 
-			button1Red.src = "http://lorempixel.com/100/100/food/1  " 
-			button1Blue.src = "http://lorempixel.com/100/100/food/2" 
-			button2Red.src = "http://lorempixel.com/100/100/food/3" 
-			button2Blue.src = "http://lorempixel.com/100/100/food/4" 
-			}
+			button1Red.src = "http://lorempixel.com/100/100/food/1  "
+			button1Blue.src = "http://lorempixel.com/100/100/food/2"
+			button2Red.src = "http://lorempixel.com/100/100/food/3"
+			button2Blue.src = "http://lorempixel.com/100/100/food/4"
+		}
 
-			function chgImg(imgField,newImg) { 
-			if (document.images) { 
-				document[imgField].src = eval(newImg + ".src") 
-			} 
+		function chgImg(imgField, newImg) {
+			if (document.images) {
+				document[imgField].src = eval(newImg + ".src")
 			}
-			
-			$('img').on('mouseover', function() {
+		}
+
+		$('img').on('mouseover', function () {
 			var self = this,
 				i = 0,
 				images = $(this).data('mouseover').split(/\s+/);
-			
+
 			(function nextImage() {
 				var next = images[i++ % images.length].split('#');
-				$(self).data('timeout', setTimeout(function() {
+				$(self).data('timeout', setTimeout(function () {
 					self.src = next[0];
 					nextImage();
 				}, next[1]));
 			})();
-			
-			}).on('mouseout', function() {
-				clearTimeout($(this).data('timeout'));
-				this.src = $(this).attr('src');
-			});
-				</script>
 
-	</head>
-	
-	<body id="body" data-ng-app="contactApp">
-		
-		<!--Preloader-->
-		<div class="preloader-it">
-			<div class="mdl-spinner mdl-js-spinner is-active is-upgraded" data-upgraded=",MaterialSpinner"><div class="mdl-spinner__layer mdl-spinner__layer-1"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div><div class="mdl-spinner__layer mdl-spinner__layer-2"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div><div class="mdl-spinner__layer mdl-spinner__layer-3"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div><div class="mdl-spinner__layer mdl-spinner__layer-4"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div></div>
-		</div>
-		<!--/Preloader-->
-		
-		<!--Main Wrapper-->
-		<div class="main-wrapper">
-		
-			<!--Bg Image-->
-			<div class="bg-struct bg-img"></div>
-			<!--/Bg Image-->
-			
-			<div class="mdl-js-layout mdl-layout--fixed-header">
-				
-				<!--Top Header-->
-				<header class="mdl-layout__header">
-					<div class="mdl-layout__header-row mdl-scroll-spy-1">
-						<!-- Title -->
-						<a href="index.html"><span class="mdl-layout-title">TRI ARIYANTO S.Kom.</span></a>
-						<div class="mdl-layout-spacer"></div>
-						<ul class="nav mdl-navigation mdl-layout--large-screen-only">
-							<li><a class="mdl-navigation__link" data-scroll href="#body">about</a></li>
-							<!-- <li><a class="mdl-navigation__link" data-scroll href="#skills_sec">skills</a></li>
-							<li><a class="mdl-navigation__link" data-scroll href="#experience_sec">experience</a></li>
-							<li><a class="mdl-navigation__link" data-scroll href="#education_sec">education</a></li> -->
-							<li><a class="mdl-navigation__link" data-scroll href="#portfolio_sec">project portofolio</a></li>
-							<!-- <li><span id="blog_drp" class="mdl-navigation__link">blog</span>
-								<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-									data-mdl-for="blog_drp">
-									<li class="mdl-menu__item"><a href="blog-list.html">Blog List</a></li>
-									<li class="mdl-menu__item"><a href="image-blog-post.html">Image Blog Post</a></li>
-									<li class="mdl-menu__item"><a href="gallery-blog-post.html">Gallery Blog Post</a></li>
-									<li class="mdl-menu__item"><a href="youtube-blog-post.html">Youtube Blog Post</a></li>
-									<li class="mdl-menu__item"><a href="vimeo-blog-post.html">Vimeo Blog Post</a></li>
-									<li class="mdl-menu__item"><a href="audio-blog-post.html">Audio Blog Post</a></li>
-								</ul>
-							</li>
-							
-							<li><a class="mdl-navigation__link" data-scroll href="#contact_sec">contact</a></li>
-							-->
-						</ul>
-						<!-- Right aligned menu below button -->
-						<button id="demo-menu-lower-right"
-								class="mdl-button mdl-js-button mdl-button--icon ver-more-btn">
-						  <i class="material-icons">more_vert</i>
-						</button>
-						
-						<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-							data-mdl-for="demo-menu-lower-right">
-							<!--
-							<li class="mdl-menu__item"><a href="#"><i class="zmdi zmdi-download font-red pr-10"></i>Download CV</a></li>
-							-->
-							<li class="mdl-menu__item"><a href="mailto:try.kdigitech@gmail.com"><i class="zmdi zmdi-email-open font-green pr-10"></i>Contact Me</a></li>
-							<li class="mdl-menu__item"><a href="https://api.whatsapp.com/send?phone=6283806092369&text=Hay%20Tri%20Ariyanto%20Saya%20mau%20tanya%20tentang%20CV%20anda%20"><i class="zmdi zmdi-phone  font-blue  pr-10"></i> +62 81212 202 364 </a></li>
-						</ul>
-						
-					</div>
-				</header>
-				<!--/Top Header-->
-				
-				<!--Left Sidebar-->
-				<div class="mdl-layout__drawer">
-					<div class="nicescroll-bar">
-						<div class="drawer-profile-wrap">
-							<div class="candidate-img-drawer mt-25 mb-20"></div>
-							<span class="candidate-name block mb-10 text-center">TRI ARIYANTO S.Kom.</span>
-							<ul class="social-icons  mb-30">
-								<li>
-									<a class="instagram-link" href="https://www.instagram.com/tryitmind/">
-										<i id="tt15" class="zmdi zmdi-instagram"></i>
-										<div class="mdl-tooltip" data-mdl-for="tt15">
-											instagram
-										</div>
-									</a>
-								</li>
-								<li>
-									<a class="facebook-link" href="https://www.facebook.com/ant.mrbuntas">
-										<i id="tt11" class="zmdi zmdi-facebook"></i>
-										<div class="mdl-tooltip" data-mdl-for="tt11">
-											facebook
-										</div>
-									</a>
-								</li>
-								<li>
-									<a class="twitter-link" href="https://twitter.com/ary_ant">
-										<i id="tt12" class="zmdi zmdi-twitter"></i>
-										<div class="mdl-tooltip" data-mdl-for="tt12">
-											twitter
-										</div>
-									</a>
-								</li>
-								<li>
-									<a class="linkedin-link" href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
-										<i id="tt13" class="zmdi zmdi-linkedin"></i>
-										<div class="mdl-tooltip" data-mdl-for="tt13">
-											linkedin
-										</div>
-									</a>
-								</li>
-								<li>
-									<a class="dribbble-link" href="https://dribbble.com/Trays">
-										<i id="tt14" class="zmdi zmdi-dribbble"></i>
-										<div class="mdl-tooltip" data-mdl-for="tt14">
-											dribbble
-										</div>
-									</a>
-								</li>
-								
-							</ul>
-						</div>
-						<div class="mdl-scroll-spy-2">
-							<ul class="mdl-navigation">
-								<li>
-									<a class="mdl-navigation__link border-top-sep" data-scroll href="#body">
-										<i class="zmdi zmdi-border-color pr-15"></i>
-										<span class="font-capitalize">about</span>
-									</a>
-								</li>	
-								<li>
-									<a class="mdl-navigation__link border-top-sep" data-scroll href="#skills_sec">
-										<i class="zmdi zmdi-cutlery pr-15"></i>
-										<span class="font-capitalize">skills</span>
-									</a>
-								</li>
-									
-								<li>
-									<a class="mdl-navigation__link border-top-sep" data-scroll href="#experience_sec">
-										<i class="zmdi zmdi-shield-check pr-15"></i>
-										<span class="font-capitalize">experience</span>
-									</a>
-								</li>	
-								<li>
-									<a class="mdl-navigation__link border-top-sep" data-scroll href="#education_sec">
-										<i class="zmdi zmdi-library pr-15"></i>
-										<span class="font-capitalize">education</span>
-									</a>
-								</li>	
-								<li>
-									<a class="mdl-navigation__link border-top-sep" data-scroll href="#portfolio_sec">
-										<i class="zmdi zmdi-case pr-15"></i>
-										<span class="font-capitalize">project done</span>
-									</a>
-								</li>
-								 	
-							</ul>
-						</div>
-						<div class="drawer-footer mt-50 mb-30 text-center">
-							<p class="font-12 mt-10">TRI ARIYANTO &copy; 2016.</p>
-						</div>
+		}).on('mouseout', function () {
+			clearTimeout($(this).data('timeout'));
+			this.src = $(this).attr('src');
+		});
+	</script>
+
+</head>
+
+<body id="body" data-ng-app="contactApp">
+
+	<!--Preloader-->
+	<div class="preloader-it">
+		<div class="mdl-spinner mdl-js-spinner is-inactive is-upgraded" data-upgraded=",MaterialSpinner">
+			<div class="col-3">
+				<div class="snippet" data-title=".dot-pulse">
+					<div class="stage">
+						<div class="dot-pulse"></div>
 					</div>
 				</div>
-				<!--/Left Sidebar-->
-				
-				<!--Main Content-->
-				<div class="main-content relative">
-					<div class="container">
-						
-						<!--About Sec-->
-						<section class="about-sec mt-180 mt-sm-120  mb-30">
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="mdl-card mdl-shadow--2dp">
-										<div class="row">
-											<div class="col-md-5 col-xs-12 mb-30">
-												<div class="candidate-img mb-35"></div>
-												<ul class="social-icons">
-													<li>
-														<a class="instagram-link" href="https://www.instagram.com/tryitmind/">
-															<i id="tt5" class="zmdi zmdi-instagram"></i>
-															<div class="mdl-tooltip" data-mdl-for="tt5">
-																instagram
-															</div>
-														</a>
-													</li>
-													<li>
-														<a class="facebook-link" href="https://www.facebook.com/ant.mrbuntas">
-															<i id="tt1" class="zmdi zmdi-facebook"></i>
-															<div class="mdl-tooltip" data-mdl-for="tt1">
-																facebook
-															</div>
-														</a>
-													</li>
-													<li>
-														<a class="twitter-link" href="https://twitter.com/ary_ant">
-															<i id="tt2" class="zmdi zmdi-twitter"></i>
-															<div class="mdl-tooltip" data-mdl-for="tt2">
-																twitter
-															</div>
-														</a>
-													</li>
-													<li>
-														<a class="linkedin-link" href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
-															<i id="tt3" class="zmdi zmdi-linkedin"></i>
-															<div class="mdl-tooltip" data-mdl-for="tt3">
-																linkedin
-															</div>
-														</a>
-													</li>
-													<li>
-														<a class="dribbble-link" href="https://dribbble.com/Trays">
-															<i id="tt4" class="zmdi zmdi-dribbble"></i>
-															<div class="mdl-tooltip" data-mdl-for="tt4">
-																dribbble
-															</div>
-														</a>
-													</li>
-													
-												</ul>
+			</div>
+		</div>
+	</div>
+	<!--/Preloader-->
+
+	<!--Main Wrapper-->
+	<div class="main-wrapper">
+
+		<!--Bg Image-->
+		<div class="bg-struct bg-img"></div>
+		<!--/Bg Image-->
+
+		<div class="mdl-js-layout mdl-layout--fixed-header">
+
+			<!--Top Header-->
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row mdl-scroll-spy-1">
+					<!-- Title -->
+					<a href="index.html"><span class="mdl-layout-title">TRI ARIYANTO S.Kom.</span></a>
+					<div class="mdl-layout-spacer"></div>
+					<ul class="nav mdl-navigation mdl-layout--large-screen-only">
+						<li><a class="mdl-navigation__link" data-scroll href="#body">about</a></li>
+						<!-- <li><a class="mdl-navigation__link" data-scroll href="#skills_sec">skills</a></li>
+							<li><a class="mdl-navigation__link" data-scroll href="#experience_sec">experience</a></li>
+							<li><a class="mdl-navigation__link" data-scroll href="#education_sec">education</a></li> -->
+						<li><a class="mdl-navigation__link" data-scroll href="#portfolio_sec">project portofolio</a>
+						</li>
+					</ul>
+					<!-- Right aligned menu below button -->
+					<button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon ver-more-btn">
+						<i class="material-icons">more_vert</i>
+					</button>
+
+					<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+						data-mdl-for="demo-menu-lower-right">
+						<!--
+							<li class="mdl-menu__item"><a href="#"><i class="zmdi zmdi-download font-red pr-10"></i>Download CV</a></li>
+							-->
+						<li class="mdl-menu__item"><a href="mailto:try.kdigitech@gmail.com"><i
+									class="zmdi zmdi-email-open font-green pr-10"></i>Contact Me</a></li>
+						<li class="mdl-menu__item"><a
+								href="https://api.whatsapp.com/send?phone=6283806092369&text=Hay%20Tri%20Ariyanto%20Saya%20mau%20tanya%20tentang%20CV%20anda%20"><i
+									class="zmdi zmdi-phone  font-blue  pr-10"></i> +62 81212 202 364 </a></li>
+					</ul>
+
+				</div>
+			</header>
+			<!--/Top Header-->
+
+			<!--Left Sidebar-->
+			<div class="mdl-layout__drawer">
+				<div class="nicescroll-bar">
+					<div class="drawer-profile-wrap">
+						<div class="candidate-img-drawer mt-25 mb-20"></div>
+						<span class="candidate-name block mb-10 text-center">TRI ARIYANTO S.Kom.</span>
+						<ul class="social-icons  mb-30">
+							<li>
+								<a class="instagram-link" href="https://www.instagram.com/tryitmind/">
+									<i id="tt15" class="zmdi zmdi-instagram"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt15">
+										instagram
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="facebook-link" href="https://www.facebook.com/ant.mrbuntas">
+									<i id="tt11" class="zmdi zmdi-facebook"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt11">
+										facebook
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="twitter-link" href="https://twitter.com/ary_ant">
+									<i id="tt12" class="zmdi zmdi-twitter"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt12">
+										twitter
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="linkedin-link" href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
+									<i id="tt13" class="zmdi zmdi-linkedin"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt13">
+										linkedin
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="dribbble-link" href="https://dribbble.com/Trays">
+									<i id="tt14" class="zmdi zmdi-dribbble"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt14">
+										dribbble
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="mdl-scroll-spy-2">
+						<ul class="mdl-navigation">
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#body">
+									<i class="zmdi zmdi-border-color pr-15"></i>
+									<span class="font-capitalize">about</span>
+								</a>
+							</li>
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#skills_sec">
+									<i class="zmdi zmdi-cutlery pr-15"></i>
+									<span class="font-capitalize">skills</span>
+								</a>
+							</li>
+
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#experience_sec">
+									<i class="zmdi zmdi-shield-check pr-15"></i>
+									<span class="font-capitalize">experience</span>
+								</a>
+							</li>
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#education_sec">
+									<i class="zmdi zmdi-library pr-15"></i>
+									<span class="font-capitalize">education</span>
+								</a>
+							</li>
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#portfolio_sec">
+									<i class="zmdi zmdi-case pr-15"></i>
+									<span class="font-capitalize">project done</span>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="drawer-footer mt-50 mb-30 text-center">
+						<p class="font-12 mt-10">TRI ARIYANTO &copy; 2016.</p>
+					</div>
+				</div>
+			</div>
+			<!--/Left Sidebar-->
+
+			<!--Main Content-->
+			<div class="main-content relative">
+				<div class="container">
+
+					<!--About Sec-->
+					<section class="about-sec mt-180 mt-sm-120  mb-30">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="mdl-card mdl-shadow--2dp">
+									<div class="row">
+										<div class="col-md-5 col-xs-12 mb-30">
+											<div class="candidate-img mb-35"></div>
+											<ul class="social-icons">
+												<li>
+													<a class="instagram-link"
+														href="https://www.instagram.com/tryitmind/">
+														<i id="tt5" class="zmdi zmdi-instagram"></i>
+														<div class="mdl-tooltip" data-mdl-for="tt5">
+															instagram
+														</div>
+													</a>
+												</li>
+												<li>
+													<a class="facebook-link"
+														href="https://www.facebook.com/ant.mrbuntas">
+														<i id="tt1" class="zmdi zmdi-facebook"></i>
+														<div class="mdl-tooltip" data-mdl-for="tt1">
+															facebook
+														</div>
+													</a>
+												</li>
+												<li>
+													<a class="twitter-link" href="https://twitter.com/ary_ant">
+														<i id="tt2" class="zmdi zmdi-twitter"></i>
+														<div class="mdl-tooltip" data-mdl-for="tt2">
+															twitter
+														</div>
+													</a>
+												</li>
+												<li>
+													<a class="linkedin-link"
+														href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
+														<i id="tt3" class="zmdi zmdi-linkedin"></i>
+														<div class="mdl-tooltip" data-mdl-for="tt3">
+															linkedin
+														</div>
+													</a>
+												</li>
+												<li>
+													<a class="dribbble-link" href="https://dribbble.com/Trays">
+														<i id="tt4" class="zmdi zmdi-dribbble"></i>
+														<div class="mdl-tooltip" data-mdl-for="tt4">
+															dribbble
+														</div>
+													</a>
+												</li>
+
+											</ul>
+										</div>
+										<div class="col-md-7 col-xs-12">
+											<div class="info-wrap">
+												<h1>TRI ARIYANTO S.Kom.</h1>
+												<h5 class="mt-20 font-grey">Software Engginer</h5>
+
 											</div>
-											<div class="col-md-7 col-xs-12">
-												<div class="info-wrap">
-													<h1>TRI ARIYANTO S.Kom.</h1>
-													<h5 class="mt-20 font-grey">Software Engginer</h5>
-													
-												</div>
-												<ul class="profile-wrap mt-50">
-													<li>
-														<div class="profile-title">Date Of Birt</div>
-														<div class="profile-desc">23 Pebruari 1988</div>
-													</li>
-													<li>
-														<div class="profile-title">address</div>
-														<div class="profile-desc">
-															Jl. Waru 2 No. 85 Rt.02/03 Pamulang barat,
-														</div>
-														<div class="profile-title"></div>
-														<div class="profile-desc">
-															Pamulang Tangerang Selatan, Banten 15417
-														</div>
-													</li>
-													<li>
-														<div class="profile-title">email</div>
-														<div class="profile-desc">
-															try.kdigitech@gmail.com
-														</div>
-													</li>
-													<li>
-														<div class="profile-title">freelance</div>
-														<div class="profile-desc relative">Available
-															<i id="datepickopn" class="zmdi zmdi-calendar-check font-green pl-5"></i>
-															<div id='datepicker1' class='datepicker'></div>
-														</div>
-														
-													</li>
-												</ul>
-											</div>
+											<ul class="profile-wrap mt-50">
+												<li>
+													<div class="profile-title">Date Of Birt</div>
+													<div class="profile-desc">23 Pebruari 1988</div>
+												</li>
+												<li>
+													<div class="profile-title">address</div>
+													<div class="profile-desc">
+														Jl. Waru 2 No. 85 Rt.02/03 Pamulang barat,
+													</div>
+													<div class="profile-title"></div>
+													<div class="profile-desc">
+														Pamulang Tangerang Selatan, Banten 15417
+													</div>
+												</li>
+												<li>
+													<div class="profile-title">email</div>
+													<div class="profile-desc">
+														try.kdigitech@gmail.com
+													</div>
+												</li>
+												<li>
+													<div class="profile-title">freelance</div>
+													<div class="profile-desc relative">Available
+														<i id="datepickopn"
+															class="zmdi zmdi-calendar-check font-green pl-5"></i>
+														<div id='datepicker1' class='datepicker'></div>
+													</div>
+
+												</li>
+											</ul>
 										</div>
 									</div>
-								</div>	
-							</div>
-						</section>
-						<!--/About Sec-->		
-						 
-					 
-						
-						<!--Portfolio Sec-->
-						<section id="portfolio_sec" class="portfolio-sec sec-pad-top-sm">
-							<div class="mb-15">
-								<h2 class="pull-left float-none-xs">Portofolio</h2>
-								<div class="filter-wrap pull-right float-none-xs">
-									<!-- Portfolio Filters --> 
-									<ul id="filters">
-										<li><a id="all" href="#" data-filter="*" class="active">all</a></li>	 
-									</ul>
-									<!--/Portfolio Filters -->
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="mb-15">
-								<h2 class="pull-left float-none-xs">TwoSpaces v2</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="gallery-wrap mb-30">
-								<div class="portfolio-wrap project-gallery">
-									<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3"> 
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/playstore.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/splash.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/login.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/reg.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/home.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/profile.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/credit-payment.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/project.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/twospacesv2/promo.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-									</ul>
-									
 								</div>
 							</div>
-							<div class="mb-15">
-								<h2 class="pull-left float-none-xs">Yamisok v1</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="gallery-wrap mb-30">
-								<div class="portfolio-wrap project-gallery">
-									<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3"> 
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/playstore.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/splash.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/login.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/reg.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/feed.jpg"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/tournament.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/profile3.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/profile4.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/yamisokv1/notif.jpg"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-									</ul>
-									
-								</div>
-							</div>
-							<div class="mb-15">
-								<h2 class="pull-left float-none-xs">Emurojaah v1</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="gallery-wrap mb-30">
-								<div class="portfolio-wrap project-gallery">
-									<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3"> 
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/playstore.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/splash.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/splash2.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/login.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/reg.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/home.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/group-juz.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/group2.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/emurojaahv2/pengaturan-profile.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-									</ul>
-									
-								</div>
-							</div>
-							<div class="mb-15">
-								<h2 class="pull-left float-none-xs">POS Drg</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="gallery-wrap mb-30">
-								<div class="portfolio-wrap project-gallery">
-									<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3"> 
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/drgstella/login.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/drgstella/home.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/drgstella/master.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/drgstella/trans.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/drgstella/treatment.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/drgstella/treatment-add.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-										<li  class="item mdl-card mdl-shadow--2dp pa-0 branding">
-											<div class="light-img-wrap mdl-card__title pa-0">
-												<img class="img-responsive" src="projekdone/drgstella/report.png"  alt="Image description" />
-												<div class="light-img-overlay"></div>
-											</div> 
-										</li>  
-									</ul>
-									
-								</div>
-							</div>
-						</section>
-						<!--/Portfolio Sec-->
-						 
-						<!--Footer Sec-->
-						<footer class="footer-sec sec-pad-top-sm sec-pad-bottom text-center">
-							<h4>thank you for visiting.</h4>
-							<p class="mt-10">TRI ARIYANTO 2016. All rights reserved.</p>
-								<ul class="social-icons mt-10">
-									<li>
-										<a class="instagram-link" href="https://www.instagram.com/tryitmind/">
-											<i id="tt10" class="zmdi zmdi-instagram"></i>
-											<div class="mdl-tooltip" data-mdl-for="tt10">
-												instagram
-											</div>
-										</a>
-									</li>
-									<li>
-										<a class="facebook-link" href="https://www.facebook.com/ant.mrbuntas">
-											<i id="tt6" class="zmdi zmdi-facebook"></i>
-											<div class="mdl-tooltip" data-mdl-for="tt6">
-												facebook
-											</div>
-										</a>
-									</li>
-									<li>
-										<a class="twitter-link" href="https://twitter.com/ary_ant">
-											<i id="tt7" class="zmdi zmdi-twitter"></i>
-											<div class="mdl-tooltip" data-mdl-for="tt7">
-												twitter
-											</div>
-										</a>
-									</li>
-									<li>
-										<a class="linkedin-link" href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
-											<i id="tt8" class="zmdi zmdi-linkedin"></i>
-											<div class="mdl-tooltip" data-mdl-for="tt8">
-												linkedin
-											</div>
-										</a>
-									</li>
-									<li>
-										<a class="dribbble-link" href="https://dribbble.com/Trays">
-											<i id="tt9" class="zmdi zmdi-dribbble"></i>
-											<div class="mdl-tooltip" data-mdl-for="tt9">
-												dribbble
-											</div>
-										</a>
-									</li>
-									
-									
-								</ul>
-											
-						</footer>
-						<!--Footer Sec-->
-					</div>
-				</div>	
-				<!--/Main Content-->
-							
-			</div>	
-		</div>	
-		<!--/Main Wrapper-->
-		
-		<!-- Scripts -->
-		<!-- <img src='projekdone/yamisok_logo.jpg' onmouseover="this.src='projekdone/kulinear.png';" onmouseout="this.src='firmanindonesia.png';" /> -->
+						</div>
+					</section>
+					<!--/About Sec-->
 
-		
-		<script src="js/jquery-1.12.4.min.js"></script>
-		<script src="js/angular.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/material.min.js"></script>
-		<script src="js/jQuery.appear.js"></script>
-		<script src="js/app.js"></script>
-		<script src="js/controllers.js"></script>
-		<script src="js/smooth-scroll.js"></script>
-		<script src="js/isotope.js"></script>
-		<script src="js/lightgallery-all.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/froogaloop2.min.js"></script>
-		<script src="js/jquery.slimscroll.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxXt2P7-U38bK0xEFIT-ebZJ1ngK8wjww"></script>
-		<script src="js/init.js"></script>
-	</body>
+
+
+					<!--Portfolio Sec-->
+					<section id="portfolio_sec" class="portfolio-sec sec-pad-top-sm">
+						<div class="mb-15">
+							<h2 class="pull-left float-none-xs">Portofolio</h2>
+							<div class="filter-wrap pull-right float-none-xs">
+								<!-- Portfolio Filters -->
+								<ul id="filters">
+									<li><a id="all" href="#" data-filter="*" class="active">all</a></li>
+								</ul>
+								<!--/Portfolio Filters -->
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="mb-15">
+							<h2 class="pull-left float-none-xs">TwoSpaces v2</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="gallery-wrap mb-30">
+							<div class="portfolio-wrap project-gallery">
+								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/playstore.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/splash.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/login.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/reg.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/home.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/profile.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/credit-payment.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/project.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/twospacesv2/promo.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="mb-15">
+							<h2 class="pull-left float-none-xs">Yamisok v1</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="gallery-wrap mb-30">
+							<div class="portfolio-wrap project-gallery">
+								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/playstore.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/splash.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/login.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/reg.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/feed.jpg"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/tournament.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/profile3.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/profile4.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/yamisokv1/notif.jpg"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="mb-15">
+							<h2 class="pull-left float-none-xs">Emurojaah v1</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="gallery-wrap mb-30">
+							<div class="portfolio-wrap project-gallery">
+								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/playstore.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/splash.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/splash2.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/login.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/reg.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/home.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/group-juz.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/emurojaahv2/group2.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive"
+												src="projekdone/emurojaahv2/pengaturan-profile.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="mb-15">
+							<h2 class="pull-left float-none-xs">POS Drg</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="gallery-wrap mb-30">
+							<div class="portfolio-wrap project-gallery">
+								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/drgstella/login.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/drgstella/home.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/drgstella/master.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/drgstella/trans.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/drgstella/treatment.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/drgstella/treatment-add.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/drgstella/report.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+
+						<div class="mb-15">
+							<h2 class="pull-left float-none-xs">CRM</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="gallery-wrap mb-30">
+							<div class="portfolio-wrap project-gallery">
+								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/crm/login.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/crm/home.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/crm/report1.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/crm/report2.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/crm/ticket.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+
+						<div class="mb-15">
+							<h2 class="pull-left float-none-xs">AGPR</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="gallery-wrap mb-30">
+							<div class="portfolio-wrap project-gallery">
+								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/agpr/login.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/agpr/home.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+										<div class="light-img-wrap mdl-card__title pa-0">
+											<img class="img-responsive" src="projekdone/agpr/timesheet.png"
+												alt="Image description" />
+											<div class="light-img-overlay"></div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+					</section>
+					<!--/Portfolio Sec-->
+
+
+					<!--Footer Sec-->
+					<footer class="footer-sec sec-pad-top-sm sec-pad-bottom text-center">
+						<h4>thank you for visiting.</h4>
+						<p class="mt-10">TRI ARIYANTO 2016. All rights reserved.</p>
+						<ul class="social-icons mt-10">
+							<li>
+								<a class="instagram-link" href="https://www.instagram.com/tryitmind/">
+									<i id="tt10" class="zmdi zmdi-instagram"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt10">
+										instagram
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="facebook-link" href="https://www.facebook.com/ant.mrbuntas">
+									<i id="tt6" class="zmdi zmdi-facebook"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt6">
+										facebook
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="twitter-link" href="https://twitter.com/ary_ant">
+									<i id="tt7" class="zmdi zmdi-twitter"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt7">
+										twitter
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="linkedin-link" href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
+									<i id="tt8" class="zmdi zmdi-linkedin"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt8">
+										linkedin
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="dribbble-link" href="https://dribbble.com/Trays">
+									<i id="tt9" class="zmdi zmdi-dribbble"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt9">
+										dribbble
+									</div>
+								</a>
+							</li>
+
+
+						</ul>
+
+					</footer>
+					<!--Footer Sec-->
+				</div>
+			</div>
+			<!--/Main Content-->
+
+		</div>
+	</div>
+	<!--/Main Wrapper-->
+
+	<!-- Scripts -->
+	<!-- <img src='projekdone/yamisok_logo.jpg' onmouseover="this.src='projekdone/kulinear.png';" onmouseout="this.src='firmanindonesia.png';" /> -->
+
+
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/material.min.js"></script>
+	<script src="js/jQuery.appear.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/smooth-scroll.js"></script>
+	<script src="js/isotope.js"></script>
+	<script src="js/lightgallery-all.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/froogaloop2.min.js"></script>
+	<script src="js/jquery.slimscroll.js"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxXt2P7-U38bK0xEFIT-ebZJ1ngK8wjww"></script> -->
+	<script src="js/init.js"></script>
+</body>
+
 </html>
