@@ -12,14 +12,16 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
 
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-
+	<!-- 1. jQuery dulu -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<style>
 		/**
  * ==============================================
@@ -187,7 +189,8 @@
 						<!-- <li><a class="mdl-navigation__link" data-scroll href="#skills_sec">skills</a></li>
 							<li><a class="mdl-navigation__link" data-scroll href="#experience_sec">experience</a></li>  -->
 						<li><a class="mdl-navigation__link" data-scroll href="#portfolio_sec">project portofolio</a></li>
-						<li><a class="mdl-navigation__link" href="https://cv-portfolio-smoky.vercel.app/triariyanto-portofolio.html">My Resume</a></li>
+						<li><a class="mdl-navigation__link"
+								href="https://cv-portfolio-smoky.vercel.app/triariyanto-portofolio.html">My Resume</a></li>
 					</ul>
 					<!-- Right aligned menu below button -->
 					<button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon ver-more-btn">
@@ -325,8 +328,7 @@
 											<div class="candidate-img mb-35"></div>
 											<ul class="social-icons">
 												<li>
-													<a class="instagram-link"
-														href="https://www.instagram.com/tryitmind/">
+													<a class="instagram-link" href="https://www.instagram.com/tryitmind/">
 														<i id="tt5" class="zmdi zmdi-instagram"></i>
 														<div class="mdl-tooltip" data-mdl-for="tt5">
 															instagram
@@ -334,8 +336,7 @@
 													</a>
 												</li>
 												<li>
-													<a class="facebook-link"
-														href="https://www.facebook.com/ant.mrbuntas">
+													<a class="facebook-link" href="https://www.facebook.com/ant.mrbuntas">
 														<i id="tt1" class="zmdi zmdi-facebook"></i>
 														<div class="mdl-tooltip" data-mdl-for="tt1">
 															facebook
@@ -351,8 +352,7 @@
 													</a>
 												</li>
 												<li>
-													<a class="linkedin-link"
-														href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
+													<a class="linkedin-link" href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
 														<i id="tt3" class="zmdi zmdi-linkedin"></i>
 														<div class="mdl-tooltip" data-mdl-for="tt3">
 															linkedin
@@ -408,8 +408,7 @@
 												<li>
 													<div class="profile-title">freelance</div>
 													<div class="profile-desc relative">Available
-														<i id="datepickopn"
-															class="zmdi zmdi-calendar-check font-green pl-5"></i>
+														<i id="datepickopn" class="zmdi zmdi-calendar-check font-green pl-5"></i>
 														<div id='datepicker1' class='datepicker'></div>
 													</div>
 
@@ -437,16 +436,16 @@
 							</div>
 							<div class="clearfix"></div>
 						</div>
-						
-						<!-- SNI - HRIS  -->
+
+						<!-- Seven Retail / Golden Lamian App -->
 						<section class="about-sec mb-20"> 
-							<div class="mdl-card mdl-shadow--2dp">
+							<div class="mdl-card mdl-shadow--2dp mb-10">
 								<div class="row"> 
 									<div class="info-wrap">
-										<h1>HRIS (Mobile Apps & Admin Web)</h1>
-										<h5 class="mt-20 font-grey">PT.SNI (2021-2022)</h5>
-										<div class="profile-desc mt-10">Attendance, Employees and Payroll System</div>
-										<!-- <div class="profile-desc">Book any kind of space for working & living simply</div> -->
+										<h1>Seven Retail Group (Mobile Apps & CMS)</h1>
+										<h5 class="mt-20 font-grey">PT.SNI / PT.PBJ (2024)</h5>
+										<div class="profile-desc mt-10">A mobile application for both iOS and Android called the Seven Retail App.</div>
+										<div class="profile-desc">It’s a cross-brand application that combines membership and loyalty programs across multiple brands.</div>
 
 										<h5 class="mt-10 font-grey">Technologys</h5>
 									</div> 
@@ -454,20 +453,64 @@
 										<li> 
 											<button class="btn btn-success">Flutter</button> 
 											<button class="btn btn-success">Firebase</button> 
-											<button class="btn btn-success">Rest API</button> 
+											<button class="btn btn-success">Node.Js</button>
+											<button class="btn btn-primary">iOS</button>
+											<button class="btn btn-info">APK</button>
+											<button class="btn btn-success">Svelte</button>
+											<button class="btn btn-success">CSS</button>
+											<button class="btn btn">Postgress</button>
+											<button class="btn btn-warning">AWS</button>
+										</li> 
+									</ul>
+								</div>  
+							</div>
+							<div class="card mdl-shadow--2dp pt-2" style="background-color: white;">
+								<div class="gallery-wrap mb-30">
+									<div class="portfolio-wrap project-gallery">
+										<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="4">
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+												<div class="light-img-wrap mdl-card__title pa-10">
+													<img class="img-responsive" src="projekdone/2024/sevenretail.png" style="max-height: 100%;"
+														alt="Image description" />
+													<div class="light-img-overlay"></div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- SNI - HRIS  -->
+						<section class="about-sec mb-20">
+							<div class="mdl-card mdl-shadow--2dp">
+								<div class="row">
+									<div class="info-wrap">
+										<h1>HRIS (Mobile Apps & Admin Web)</h1>
+										<h5 class="mt-20 font-grey">PT.SNI (2021-2022)</h5>
+										<div class="profile-desc mt-10">Attendance, Employees and Payroll System</div>
+										<!-- <div class="profile-desc">Book any kind of space for working & living simply</div> -->
+
+										<h5 class="mt-10 font-grey">Technologys</h5>
+									</div>
+									<ul class="profile-wrap mt-10">
+										<li>
+											<button class="btn btn-success">Flutter</button>
+											<button class="btn btn-success">Firebase</button>
+											<button class="btn btn-success">Rest API</button>
 											<button class="btn btn-success">Location</button>
 											<button class="btn btn-info">APK</button>
-										</li> 
-									</ul> 
+										</li>
+									</ul>
 									<ul class="profile-wrap mt-10">
-										<li> 
+										<li>
 											<button class="btn btn-success">Laravel</button>
 											<button class="btn btn-success">MySQL</button>
 											<button class="btn btn-success">CSS</button>
 											<button class="btn btn">Sql Server Deploy</button>
-										</li> 
-									</ul> 
-								</div>  
+										</li>
+									</ul>
+								</div>
 							</div>
 						</section>
 						<div class="gallery-wrap mb-30">
@@ -489,7 +532,7 @@
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/sni/2hris&app/absen.png"  style="max-height: 100%;"
+											<img class="img-responsive" src="projekdone/sni/2hris&app/absen.png" style="max-height: 100%;"
 												alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
@@ -500,7 +543,7 @@
 												alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
-									</li> 
+									</li>
 								</ul>
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="2">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
@@ -516,15 +559,15 @@
 												alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
-									</li> 
+									</li>
 								</ul>
 							</div>
 						</div>
 
 						<!-- SNI - WT  -->
-						<section class="about-sec mb-20"> 
+						<section class="about-sec mb-20">
 							<div class="mdl-card mdl-shadow--2dp">
-								<div class="row"> 
+								<div class="row">
 									<div class="info-wrap">
 										<h1>Wait Time (Mobile Apps)</h1>
 										<h5 class="mt-20 font-grey">PT.SNI (2021-2022)</h5>
@@ -532,7 +575,7 @@
 										<!-- <div class="profile-desc">Book any kind of space for working & living simply</div> -->
 
 										<h5 class="mt-10 font-grey">Technologys</h5>
-									</div> 
+									</div>
 									<ul class="profile-wrap mt-10">
 										<li>
 											<!-- <div class="profile-title">Technologys</div> -->
@@ -543,9 +586,9 @@
 											<button class="btn btn-success">Graph Reporting</button>
 											<button class="btn btn-success">Local Deploy</button>
 											<button class="btn btn-info">APK</button>
-										</li> 
-									</ul> 
-								</div>  
+										</li>
+									</ul>
+								</div>
 							</div>
 						</section>
 						<div class="gallery-wrap mb-30">
@@ -560,8 +603,7 @@
 									</li> -->
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/sni/1wt/home-potr.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/sni/1wt/home-potr.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -572,45 +614,43 @@
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
-									<li class="item mdl-card mdl-shadow--2dp pa-0 branding"> 
+									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/sni/1wt/home-landscp.png"
-												alt="Image description" />
-											<div class="light-img-overlay mb-10"></div> 
-										</div> 
+											<img class="img-responsive" src="projekdone/sni/1wt/home-landscp.png" alt="Image description" />
+											<div class="light-img-overlay mb-10"></div>
+										</div>
 
 										<div style="padding-top: 10px; padding-bottom: 10px; background-color: gray; opacity: 0.2;"></div>
-										
+
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/sni/1wt/home-l2.png"
-												alt="Image description" />
-											<div class="light-img-overlay mb-10"></div> 
+											<img class="img-responsive" src="projekdone/sni/1wt/home-l2.png" alt="Image description" />
+											<div class="light-img-overlay mb-10"></div>
 										</div>
-										
+
 										<div style="padding-top: 10px; padding-bottom: 10px; background-color: gray; opacity: 0.2;"></div>
-										
+
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/sni/1wt/graf.png"
-												alt="Image description" />
-											<div class="light-img-overlay mb-10"></div>  
-										</div>  
+											<img class="img-responsive" src="projekdone/sni/1wt/graf.png" alt="Image description" />
+											<div class="light-img-overlay mb-10"></div>
+										</div>
 									</li>
 								</ul>
 							</div>
 						</div>
 
 						<!-- TSG  -->
-						<section class="about-sec mb-20"> 
+						<section class="about-sec mb-20">
 							<div class="mdl-card mdl-shadow--2dp">
-								<div class="row"> 
+								<div class="row">
 									<div class="info-wrap">
 										<h1>TwoSpaces (Mobile Apps)</h1>
 										<h5 class="mt-20 font-grey">PT.TSG (2018-2021)</h5>
-										<div class="profile-desc mt-10">Hospitality Service. Come Live, Work and More Rental Solutions, Book any kind of space for working & living simply</div>
+										<div class="profile-desc mt-10">Hospitality Service. Come Live, Work and More Rental Solutions, Book
+											any kind of space for working & living simply</div>
 										<!-- <div class="profile-desc">Book any kind of space for working & living simply</div> -->
 
 										<h5 class="mt-10 font-grey">Technologys</h5>
-									</div> 
+									</div>
 									<ul class="profile-wrap mt-10">
 										<li>
 											<!-- <div class="profile-title">Technologys</div> -->
@@ -621,9 +661,9 @@
 											<button class="btn btn-success">Location</button>
 											<button class="btn btn-info">Playstore</button>
 											<button class="btn">App Store</button>
-										</li> 
-									</ul> 
-								</div>  
+										</li>
+									</ul>
+								</div>
 							</div>
 						</section>
 						<div class="gallery-wrap mb-30">
@@ -631,22 +671,19 @@
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="4">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/twospacesv2/playstore.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/twospacesv2/playstore.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/twospacesv2/splash.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/twospacesv2/splash.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/twospacesv2/login.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/twospacesv2/login.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -659,15 +696,13 @@
 									</li> -->
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/twospacesv2/home.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/twospacesv2/home.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/twospacesv2/profile.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/twospacesv2/profile.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -680,15 +715,13 @@
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/twospacesv2/project.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/twospacesv2/project.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/twospacesv2/promo.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/twospacesv2/promo.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -697,27 +730,30 @@
 							</div>
 						</div>
 						<!-- #Yamisok -->
-						<section class="about-sec mb-20"> 
+						<section class="about-sec mb-20">
 							<div class="mdl-card mdl-shadow--2dp">
-								<div class="row"> 
+								<div class="row">
 									<div class="info-wrap">
 										<h1>Yamisok Tech v1</h1>
 										<h5 class="mt-20 font-grey">PT.Yamisok Tech (2018-2021)</h5>
-										<div class="profile-desc mt-10 pl-10">A developing company dedicated for Indonesia eSports gaming community.</div>
+										<div class="profile-desc mt-10 pl-10">A developing company dedicated for Indonesia eSports gaming
+											community.</div>
 										<h5 class="mt-10 font-grey">Job Desc</h5>
 										<div class="profile-desc mt-10 pl-10">Development android mobile apps.</div>
 										<h5 class="mt-10 font-grey">Technologys</h5>
-									</div> 
+									</div>
 									<ul class="profile-wrap mt-10">
 										<li>
 											<button class="btn btn-success">Nativescript</button>
 											<button class="btn btn-success">Flutter</button>
 											<button class="btn btn-success">Firebase</button>
 											<button class="btn">App Store</button>
-											<button class="btn btn-info" type="button" onClick="javascript:window.open('https://www.yamisok.com', '_blank');" target="_blank">Homepage</button>
-										</li> 
-									</ul> 
-								</div>  
+											<button class="btn btn-info" type="button"
+												onClick="javascript:window.open('https://www.yamisok.com', '_blank');"
+												target="_blank">Homepage</button>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</section>
 						<div class="gallery-wrap mb-30">
@@ -725,22 +761,19 @@
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="4">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/playstore.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/playstore.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/splash.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/splash.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/login.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/login.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -753,36 +786,31 @@
 									</li> -->
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/feed.jpg"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/feed.jpg" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/tournament.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/tournament.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/profile3.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/profile3.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/profile4.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/profile4.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/yamisokv1/notif.jpg"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/yamisokv1/notif.jpg" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -791,28 +819,33 @@
 							</div>
 						</div>
 						<!-- #emurojaah -->
-						<section class="about-sec mb-20"> 
+						<section class="about-sec mb-20">
 							<div class="mdl-card mdl-shadow--2dp">
-								<div class="row"> 
+								<div class="row">
 									<div class="info-wrap">
 										<h1>e-Murojaah v1</h1>
 										<h5 class="mt-20 font-grey">
-											<a class="mdl-navigation__link" target="_blank" data-filter="*" class="active" href="https://emurojaah.com">Emurojaah v1 (2019-2020)</a>
+											<a class="mdl-navigation__link" target="_blank" data-filter="*" class="active"
+												href="https://emurojaah.com">Emurojaah v1 (2019-2020)</a>
 										</h5>
-										<div class="profile-desc mt-10 pl-10">Fitur e-Murojaah · Khatam Al-Quran Bersama · Buat Grup Sendiri · Bergabunglah Dengan Yang Lain · Baca Al-Quran Setiap Hari · Pilih Ayat, Surat atau Juz · Simpan Bacaan · Baca Sesuai Preferensi Bahasa · Ingatkan Anggota Grup</div>
+										<div class="profile-desc mt-10 pl-10">Fitur e-Murojaah · Khatam Al-Quran Bersama · Buat Grup Sendiri
+											· Bergabunglah Dengan Yang Lain · Baca Al-Quran Setiap Hari · Pilih Ayat, Surat atau Juz · Simpan
+											Bacaan · Baca Sesuai Preferensi Bahasa · Ingatkan Anggota Grup</div>
 										<h5 class="mt-10 font-grey">Job Desc</h5>
 										<div class="profile-desc mt-10 pl-10">Development android mobile apps.</div>
 										<h5 class="mt-10 font-grey">Technologys</h5>
-									</div> 
+									</div>
 									<ul class="profile-wrap mt-10">
 										<li>
 											<button class="btn btn-success">Flutter</button>
 											<button class="btn btn-success">Firebase</button>
 											<button class="btn">App Store</button>
-											<button class="btn btn-info" type="button" onClick="javascript:window.open('https://emurojaah.com', '_blank');" target="_blank">Homepage</button>
-										</li> 
-									</ul> 
-								</div>  
+											<button class="btn btn-info" type="button"
+												onClick="javascript:window.open('https://emurojaah.com', '_blank');"
+												target="_blank">Homepage</button>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</section>
 						<div class="gallery-wrap mb-30">
@@ -820,29 +853,25 @@
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="4">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/emurojaahv2/playstore.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/emurojaahv2/playstore.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/emurojaahv2/splash.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/emurojaahv2/splash.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/emurojaahv2/splash2.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/emurojaahv2/splash2.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/emurojaahv2/login.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/emurojaahv2/login.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -855,29 +884,25 @@
 									</li> -->
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/emurojaahv2/home.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/emurojaahv2/home.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/emurojaahv2/group-juz.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/emurojaahv2/group-juz.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/emurojaahv2/group2.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/emurojaahv2/group2.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive"
-												src="projekdone/emurojaahv2/pengaturan-profile.png"
+											<img class="img-responsive" src="projekdone/emurojaahv2/pengaturan-profile.png"
 												alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
@@ -888,27 +913,30 @@
 						</div>
 
 						<!-- #emurojaah -->
-						<section class="about-sec mb-20"> 
+						<section class="about-sec mb-20">
 							<div class="mdl-card mdl-shadow--2dp">
-								<div class="row"> 
+								<div class="row">
 									<div class="info-wrap">
 										<h1>POS Dental Drg.stella</h1>
 										<h5 class="mt-20 font-grey">
-											<a class="mdl-navigation__link" target="_blank" data-filter="*" class="active" href="https://emurojaah.com">POS (2017 -)</a>
+											<a class="mdl-navigation__link" target="_blank" data-filter="*" class="active"
+												href="https://emurojaah.com">POS (2017 -)</a>
 										</h5>
 										<div class="profile-desc mt-10 pl-10">Inventory, Booking & POS Dental System</div>
 										<h5 class="mt-10 font-grey">Job Desc</h5>
 										<div class="profile-desc mt-10 pl-10">Development web CMS.</div>
 										<h5 class="mt-10 font-grey">Technologys</h5>
-									</div> 
+									</div>
 									<ul class="profile-wrap mt-10">
 										<li>
 											<button class="btn btn-success">PHP HTML</button>
 											<button class="btn btn-success">bootstrap</button>
-											<button class="btn btn-info" type="button" onClick="javascript:window.open('http://kdigitech.net/drgstella/login.php', '_blank');" target="_blank">Homepage</button>
-										</li> 
-									</ul> 
-								</div>  
+											<button class="btn btn-info" type="button"
+												onClick="javascript:window.open('http://kdigitech.net/drgstella/login.php', '_blank');"
+												target="_blank">Homepage</button>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</section>
 						<div class="mb-15">
@@ -920,36 +948,31 @@
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/drgstella/login.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/drgstella/login.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/drgstella/home.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/drgstella/home.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/drgstella/master.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/drgstella/master.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/drgstella/trans.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/drgstella/trans.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/drgstella/treatment.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/drgstella/treatment.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -962,8 +985,7 @@
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/drgstella/report.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/drgstella/report.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -981,36 +1003,31 @@
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="3">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/crm/login.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/crm/login.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/crm/home.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/crm/home.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/crm/report1.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/crm/report1.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/crm/report2.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/crm/report2.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/crm/ticket.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/crm/ticket.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -1028,29 +1045,25 @@
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="4">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/agpr/app/splash.jpg"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/agpr/app/splash.jpg" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/agpr/app/login2.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/agpr/app/login2.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/agpr/app/homes.jpg"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/agpr/app/homes.jpg" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/agpr/app/ope_add.jpg"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/agpr/app/ope_add.jpg" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -1064,22 +1077,19 @@
 								<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="2">
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/agpr/login.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/agpr/login.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 										<div style="padding-top: 10px; padding-bottom: 10px; background-color: gray; opacity: 0.2;"></div>
 
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/agpr/timesheet.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/agpr/timesheet.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
 									<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
 										<div class="light-img-wrap mdl-card__title pa-10">
-											<img class="img-responsive" src="projekdone/agpr/home.png"
-												alt="Image description" />
+											<img class="img-responsive" src="projekdone/agpr/home.png" alt="Image description" />
 											<div class="light-img-overlay"></div>
 										</div>
 									</li>
@@ -1167,7 +1177,7 @@
 	<!-- <img src='projekdone/yamisok_logo.jpg' onmouseover="this.src='projekdone/kulinear.png';" onmouseout="this.src='firmanindonesia.png';" /> -->
 
 
-	<script src="js/jquery-1.12.4.min.js"></script>
+	<!-- <script src="js/jquery-1.12.4.min.js"></script> -->
 	<script src="js/angular.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
