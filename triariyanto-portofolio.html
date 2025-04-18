@@ -110,6 +110,63 @@
 				box-shadow: 10014px 0 0 -5px #9880ff;
 			}
 		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			padding-top: 60px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		.modal-content {
+			display: block;
+			margin: auto;
+			max-width: 80%;
+			max-height: 80%;
+			animation: zoom 0.3s;
+		}
+
+		@keyframes zoom {
+			from {
+				transform: scale(0.7);
+			}
+
+			to {
+				transform: scale(1);
+			}
+		}
+
+		.close {
+			position: absolute;
+			top: 30px;
+			right: 45px;
+			color: #fff;
+			font-size: 40px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.light-img-overlay {
+			pointer-events: none;
+		}
+
+		.modal .prev,
+		.modal .next {
+			transition: 0.3s;
+			user-select: none;
+		}
+
+		.modal .prev:hover,
+		.modal .next:hover {
+			color: #aaa;
+			transform: scale(1.2);
+		}
 	</style>
 
 	<script>
@@ -189,8 +246,8 @@
 						<!-- <li><a class="mdl-navigation__link" data-scroll href="#skills_sec">skills</a></li>
 							<li><a class="mdl-navigation__link" data-scroll href="#experience_sec">experience</a></li>  -->
 						<li><a class="mdl-navigation__link" data-scroll href="#portfolio_sec">project portofolio</a></li>
-						<li><a class="mdl-navigation__link"
-								href="https://cv-portfolio-smoky.vercel.app/triariyanto-portofolio.html">My Resume</a></li>
+						<li><a class="mdl-navigation__link" href="https://cv-portfolio-smoky.vercel.app/triariyanto.html">My
+								Resume</a></li>
 					</ul>
 					<!-- Right aligned menu below button -->
 					<button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon ver-more-btn">
@@ -202,7 +259,7 @@
 						<!--
 							<li class="mdl-menu__item"><a href="#"><i class="zmdi zmdi-download font-red pr-10"></i>Download CV</a></li>
 							-->
-						<li class="mdl-menu__item"><a href="mailto:try.kdigitech@gmail.com"><i
+						<li class="mdl-menu__item"><a href="mailto:ariyant.try@gmail.com"><i
 									class="zmdi zmdi-email-open font-green pr-10"></i>Contact Me</a></li>
 						<li class="mdl-menu__item"><a
 								href="https://api.whatsapp.com/send?phone=6283806092369&text=Hay%20Tri%20Ariyanto%20Saya%20mau%20tanya%20tentang%20CV%20anda%20"><i
@@ -381,40 +438,81 @@
 										<div class="col-md-7 col-xs-12">
 											<div class="info-wrap">
 												<h1>TRI ARIYANTO S.Kom.</h1>
-												<h5 class="mt-20 font-grey">Software Engginer</h5>
-
+												<h5 class="mt-20 font-grey">Software Engineer</h5>
 											</div>
-											<ul class="profile-wrap mt-50">
-												<li>
-													<div class="profile-title">Date Of Birt</div>
-													<div class="profile-desc">23 Pebruari 1988</div>
-												</li>
-												<li>
-													<div class="profile-title">address</div>
-													<div class="profile-desc">
-														Jl. Waru 2 No. 85 Rt.02/03 Pamulang barat, Pamulang
-													</div>
-													<div class="profile-title"></div>
-													<div class="profile-desc">
+
+											<div class="profile-wrap" style="margin-top: 1rem;">
+												<div style="display: flex; margin-bottom: 1rem;">
+													<div style="flex: 0 0 20%; color: #444;">Birthday</div>
+													<div style="flex: 0 0 80%;">February 23, 1988</div>
+												</div>
+
+												<div style="display: flex; margin-bottom: 1rem;">
+													<div style="flex: 0 0 20%; color: #444;">Address</div>
+													<div style="flex: 0 0 80%;">
+														Jl. Waru 2 No. 85 Rt.02/03 Pamulang Barat, Pamulang
 														Tangerang Selatan, Banten 15417
 													</div>
-												</li>
-												<li>
-													<div class="profile-title">email</div>
-													<div class="profile-desc">
-														try.kdigitech@gmail.com
-													</div>
-												</li>
-												<li>
-													<div class="profile-title">freelance</div>
-													<div class="profile-desc relative">Available
-														<i id="datepickopn" class="zmdi zmdi-calendar-check font-green pl-5"></i>
-														<div id='datepicker1' class='datepicker'></div>
+												</div>
+
+												<div style="display: flex; margin-bottom: 1rem;">
+													<div style="flex: 0 0 20%; color: #444;">Contact</div>
+													<div style="flex: 0 0 80%;">ariyant.try@gmail.com | +628 1212 202 364</div>
+												</div>
+
+												<div style="display: flex; margin-bottom: 1rem; align-items: start;">
+													<div style="flex: 0 0 20%; color: #444;">Library</div>
+													<div>
+														<span
+															style="background-color:#02569B;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Flutter</span>
+														<span
+															style="background-color:#61DBFB;color:#000;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">React</span>
+														<span
+															style="background-color:#000000;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Next.js</span>
+														<span
+															style="background-color:#FF3E00;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Svelte</span>
+														<span
+															style="background-color:#3C873A;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Node.js</span>
+														<span
+															style="background-color:#777BB4;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">PHP</span>
+														<span
+															style="background-color:#F9322C;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Laravel</span>
+														<span
+															style="background-color:#00758F;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">MySQL</span>
+														<span
+															style="background-color:#CC2927;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">MS
+															SQL Server</span>
+														<span
+															style="background-color:#336791;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">PostgreSQL</span>
+														<span
+															style="background-color:#FFCA28;color:#000;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Firebase</span>
+														<span
+															style="background-color:#FF9900;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">AWS</span>
+														<span
+															style="background-color:#47A248;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">MongoDB</span>
+														<span
+															style="background-color:#181717;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">GitHub</span>
+														<span
+															style="background-color:#0A0A0A;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">CI/CD</span>
+														<span
+															style="background-color:#F24E1E;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Figma</span>
+														<span
+															style="background-color:#31A8FF;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Photoshop</span>
+														<span
+															style="background-color:#00BFA5;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">diagram.net</span>
+														<span
+															style="background-color:#0052CC;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Jira</span>
+														<span
+															style="background-color:#0079BF;color:#fff;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Trello</span>
+														<span
+															style="background-color:#3BE8B0;color:#000;padding: 1px 5px;border-radius:12px;margin:4px;display:inline-block;font-size:13px;">Asana</span>
 													</div>
 
-												</li>
-											</ul>
+												</div>
+
+											</div>
 										</div>
+
 									</div>
 								</div>
 							</div>
@@ -438,21 +536,43 @@
 						</div>
 
 						<!-- Seven Retail / Golden Lamian App -->
-						<section class="about-sec mb-20"> 
+						<section class="about-sec mb-20">
 							<div class="mdl-card mdl-shadow--2dp mb-10">
-								<div class="row"> 
+								<div class="row">
 									<div class="info-wrap">
 										<h1>Seven Retail Group (Mobile Apps & CMS)</h1>
 										<h5 class="mt-20 font-grey">PT.SNI / PT.PBJ (2024)</h5>
-										<div class="profile-desc mt-10">A mobile application for both iOS and Android called the Seven Retail App.</div>
-										<div class="profile-desc">It’s a cross-brand application that combines membership and loyalty programs across multiple brands.</div>
-
+										<div class="profile-desc mt-10">
+											<ul style="list-style-type: disc; padding-left: 20px;">
+												<li>
+													<strong>Seven Retail App / Golden Lamian App:</strong>
+													A cross-brand mobile application (iOS & Android) combining membership and loyalty programs
+													across multiple brands.
+												</li>
+												<li>
+													<strong>Mobile HRIS Application + CMS:</strong>
+													Includes attendance tracking, payroll management, and admin features.
+												</li>
+												<li>
+													<strong>POS System (ERP):</strong>
+													Mobile and web-based point of sale and ERP system for operational use.
+												</li>
+												<li>
+													<strong>Promotional Websites:</strong>
+													Developed various promo/marketing websites, including those built with WordPress.
+												</li>
+												<li>
+													<strong>Internal Reporting Tools:</strong>
+													Dashboards for Golden Lamian, NPS tracking, and operational cash flow reports.
+												</li>
+											</ul>
+										</div>
 										<h5 class="mt-10 font-grey">Technologys</h5>
-									</div> 
+									</div>
 									<ul class="profile-wrap mt-10">
-										<li> 
-											<button class="btn btn-success">Flutter</button> 
-											<button class="btn btn-success">Firebase</button> 
+										<li>
+											<button class="btn btn-success">Flutter</button>
+											<button class="btn btn-success">Firebase</button>
 											<button class="btn btn-success">Node.Js</button>
 											<button class="btn btn-primary">iOS</button>
 											<button class="btn btn-info">APK</button>
@@ -460,19 +580,108 @@
 											<button class="btn btn-success">CSS</button>
 											<button class="btn btn">Postgress</button>
 											<button class="btn btn-warning">AWS</button>
-										</li> 
+										</li>
 									</ul>
-								</div>  
+								</div>
 							</div>
 							<div class="card mdl-shadow--2dp pt-2" style="background-color: white;">
 								<div class="gallery-wrap mb-30">
 									<div class="portfolio-wrap project-gallery">
 										<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="4">
-											<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
-												<div class="light-img-wrap mdl-card__title pa-10">
-													<img class="img-responsive" src="projekdone/2024/sevenretail.png" style="max-height: 100%;"
-														alt="Image description" />
-													<div class="light-img-overlay"></div>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/sevenretail.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/superapp.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/qrordering-home.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/domo-app.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/2ndscrn-domo.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/promotion.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/cms-login.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/cms-menu.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/cms-user.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/cms-promo.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/internal-npsgl.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding" style="text-align: center;">
+												<div class="light-img-wrap mdl-card__title pa-10"
+													style="display: flex; align-items: center; justify-content: center; height: 200px;">
+													<img class="img-responsive" src="projekdone/2024/hive.png"
+														style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Image description" />
+													<div class="light-img-overlay" style="align-content: center;"></div>
 												</div>
 											</li>
 										</ul>
@@ -1173,9 +1382,61 @@
 	</div>
 	<!--/Main Wrapper-->
 
-	<!-- Scripts -->
-	<!-- <img src='projekdone/yamisok_logo.jpg' onmouseover="this.src='projekdone/kulinear.png';" onmouseout="this.src='firmanindonesia.png';" /> -->
+	<!-- Modal Image Viewer -->
+	<div id="imageModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="modalImage">
+		<span class="prev"
+			style="position:absolute;left:20px;top:50%;font-size:40px;color:white;cursor:pointer;">&#10094;</span>
+		<span class="next"
+			style="position:absolute;right:20px;top:50%;font-size:40px;color:white;cursor:pointer;">&#10095;</span>
+	</div>
 
+
+	<script>
+		$(document).ready(function () {
+			let $modal = $('#imageModal');
+			let $modalImg = $('#modalImage');
+			let currentIndex = 0;
+			let imageList = [];
+
+			// Ambil semua image yang ada di dalam 1 project-gallery
+			const $images = $('.portfolio-wrap.project-gallery img');
+			$images.each(function () {
+				imageList.push($(this).attr('src'));
+			});
+
+			$images.css('cursor', 'pointer').on('click', function () {
+				currentIndex = $images.index(this); // index saat ini
+				$modal.show();
+				$modalImg.attr('src', imageList[currentIndex]);
+			});
+
+			// Tombol close
+			$('.modal .close, #imageModal').on('click', function (e) {
+				if (e.target !== this && !$(e.target).is('.close')) return;
+				$modal.hide();
+			});
+
+			// Tombol next
+			$('.modal .next').on('click', function () {
+				currentIndex = (currentIndex + 1) % imageList.length;
+				$modalImg.attr('src', imageList[currentIndex]);
+			});
+
+			// Tombol prev
+			$('.modal .prev').on('click', function () {
+				currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+				$modalImg.attr('src', imageList[currentIndex]);
+			});
+
+			$('#all').on('click', function (e) {
+				e.preventDefault(); // biar nggak reload
+				$modal.show();
+				$modalImg.attr('src', imageList[currentIndex]);
+			});
+		});
+	</script>
 
 	<!-- <script src="js/jquery-1.12.4.min.js"></script> -->
 	<script src="js/angular.min.js"></script>

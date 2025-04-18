@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>PORTOFOLIO TRI ARIYANTO S.Kom.</title>
+	<meta name="description" content="PORTOFOLIO TRI ARIYANTO" />
+	<meta name="keywords" content="PORTOFOLIO TRI ARIYANTO" />
+	<meta name="author" content="tray" />
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!-- 1. jQuery dulu -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<style>
+		/**
+ * ==============================================
+ * Dot Pulse
+ * ==============================================
+ */
+		.dot-pulse {
+			position: relative;
+			left: -9999px;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background-color: #9880ff;
+			color: #9880ff;
+			box-shadow: 9999px 0 0 -5px #9880ff;
+			animation: dotPulse 1.5s infinite linear;
+			animation-delay: .25s;
+		}
+
+		.dot-pulse::before,
+		.dot-pulse::after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background-color: #9880ff;
+			color: #9880ff;
+		}
+
+		.dot-pulse::before {
+			box-shadow: 9984px 0 0 -5px #9880ff;
+			animation: dotPulseBefore 1.5s infinite linear;
+			animation-delay: 0s;
+		}
+
+		.dot-pulse::after {
+			box-shadow: 10014px 0 0 -5px #9880ff;
+			animation: dotPulseAfter 1.5s infinite linear;
+			animation-delay: .5s;
+		}
+
+		@keyframes dotPulseBefore {
+			0% {
+				box-shadow: 9984px 0 0 -5px #9880ff;
+			}
+
+			30% {
+				box-shadow: 9984px 0 0 2px #9880ff;
+			}
+
+			60%,
+			100% {
+				box-shadow: 9984px 0 0 -5px #9880ff;
+			}
+		}
+
+		@keyframes dotPulse {
+			0% {
+				box-shadow: 9999px 0 0 -5px #9880ff;
+			}
+
+			30% {
+				box-shadow: 9999px 0 0 2px #9880ff;
+			}
+
+			60%,
+			100% {
+				box-shadow: 9999px 0 0 -5px #9880ff;
+			}
+		}
+
+		@keyframes dotPulseAfter {
+			0% {
+				box-shadow: 10014px 0 0 -5px #9880ff;
+			}
+
+			30% {
+				box-shadow: 10014px 0 0 2px #9880ff;
+			}
+
+			60%,
+			100% {
+				box-shadow: 10014px 0 0 -5px #9880ff;
+			}
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			padding-top: 60px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		.modal-content {
+			display: block;
+			margin: auto;
+			max-width: 80%;
+			max-height: 80%;
+			animation: zoom 0.3s;
+		}
+
+		@keyframes zoom {
+			from {
+				transform: scale(0.7);
+			}
+
+			to {
+				transform: scale(1);
+			}
+		}
+
+		.close {
+			position: absolute;
+			top: 30px;
+			right: 45px;
+			color: #fff;
+			font-size: 40px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.light-img-overlay {
+			pointer-events: none;
+		}
+
+		.modal .prev,
+		.modal .next {
+			transition: 0.3s;
+			user-select: none;
+		}
+
+		.modal .prev:hover,
+		.modal .next:hover {
+			color: #aaa;
+			transform: scale(1.2);
+		}
+	</style>
+
+	<script>
+		if (document.images) {
+			button1Red = new Image
+			button1Blue = new Image
+			button2Red = new Image
+			button2Blue = new Image
+
+			button1Red.src = "http://lorempixel.com/100/100/food/1  "
+			button1Blue.src = "http://lorempixel.com/100/100/food/2"
+			button2Red.src = "http://lorempixel.com/100/100/food/3"
+			button2Blue.src = "http://lorempixel.com/100/100/food/4"
+		}
+
+		function chgImg(imgField, newImg) {
+			if (document.images) {
+				document[imgField].src = eval(newImg + ".src")
+			}
+		}
+
+		$('img').on('mouseover', function () {
+			var self = this,
+				i = 0,
+				images = $(this).data('mouseover').split(/\s+/);
+
+			(function nextImage() {
+				var next = images[i++ % images.length].split('#');
+				$(self).data('timeout', setTimeout(function () {
+					self.src = next[0];
+					nextImage();
+				}, next[1]));
+			})();
+
+		}).on('mouseout', function () {
+			clearTimeout($(this).data('timeout'));
+			this.src = $(this).attr('src');
+		});
+	</script>
+
+</head>
+
+<body id="body" data-ng-app="contactApp">
+
+	<!--Preloader-->
+	<div class="preloader-it">
+		<div class="mdl-spinner mdl-js-spinner is-inactive is-upgraded" data-upgraded=",MaterialSpinner">
+			<div class="col-3">
+				<div class="snippet" data-title=".dot-pulse">
+					<div class="stage">
+						<div class="dot-pulse"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/Preloader-->
+
+	<!--Main Wrapper-->
+	<div class="main-wrapper">
+
+		<!--Bg Image-->
+		<div class="bg-struct bg-img"></div>
+		<!--/Bg Image-->
+
+		<div class="mdl-js-layout mdl-layout--fixed-header">
+
+			<!--Top Header-->
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row mdl-scroll-spy-1">
+					<!-- Title -->
+					<a href="index.html"><span class="mdl-layout-title">TRI ARIYANTO S.Kom.</span></a>
+					<div class="mdl-layout-spacer"></div>
+					<ul class="nav mdl-navigation mdl-layout--large-screen-only">
+						<li><a class="mdl-navigation__link" data-scroll href="#body">about</a></li>
+						<!-- <li><a class="mdl-navigation__link" data-scroll href="#skills_sec">skills</a></li>
+							<li><a class="mdl-navigation__link" data-scroll href="#experience_sec">experience</a></li>  -->
+						<li><a class="mdl-navigation__link" data-scroll href="#portfolio_sec">project portofolio</a></li>
+						<li><a class="mdl-navigation__link"
+								href="https://cv-portfolio-smoky.vercel.app/triariyanto-portofolio.html">My Resume</a></li>
+					</ul>
+					<!-- Right aligned menu below button -->
+					<button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon ver-more-btn">
+						<i class="material-icons">more_vert</i>
+					</button>
+
+					<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+						data-mdl-for="demo-menu-lower-right">
+						<!--
+							<li class="mdl-menu__item"><a href="#"><i class="zmdi zmdi-download font-red pr-10"></i>Download CV</a></li>
+							-->
+						<li class="mdl-menu__item"><a href="mailto:try.kdigitech@gmail.com"><i
+									class="zmdi zmdi-email-open font-green pr-10"></i>Contact Me</a></li>
+						<li class="mdl-menu__item"><a
+								href="https://api.whatsapp.com/send?phone=6283806092369&text=Hay%20Tri%20Ariyanto%20Saya%20mau%20tanya%20tentang%20CV%20anda%20"><i
+									class="zmdi zmdi-phone  font-blue  pr-10"></i> +62 81212 202 364 </a></li>
+					</ul>
+
+				</div>
+			</header>
+			<!--/Top Header-->
+
+			<!--Left Sidebar-->
+			<div class="mdl-layout__drawer">
+				<div class="nicescroll-bar">
+					<div class="drawer-profile-wrap">
+						<div class="candidate-img-drawer mt-25 mb-20"></div>
+						<span class="candidate-name block mb-10 text-center">TRI ARIYANTO S.Kom.</span>
+						<ul class="social-icons  mb-30">
+							<li>
+								<a class="instagram-link" href="https://www.instagram.com/tryitmind/">
+									<i id="tt15" class="zmdi zmdi-instagram"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt15">
+										instagram
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="facebook-link" href="https://www.facebook.com/ant.mrbuntas">
+									<i id="tt11" class="zmdi zmdi-facebook"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt11">
+										facebook
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="twitter-link" href="https://twitter.com/ary_ant">
+									<i id="tt12" class="zmdi zmdi-twitter"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt12">
+										twitter
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="linkedin-link" href="https://www.linkedin.com/in/try-ariyanto-9250851a0/">
+									<i id="tt13" class="zmdi zmdi-linkedin"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt13">
+										linkedin
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="dribbble-link" href="https://dribbble.com/Trays">
+									<i id="tt14" class="zmdi zmdi-dribbble"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt14">
+										dribbble
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="dribbble-link" href="https://github.com/tryOffice/cv-portfolio.git">
+									<i id="tt14" class="zmdi zmdi-github"></i>
+									<div class="mdl-tooltip" data-mdl-for="tt14">
+										Github
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="mdl-scroll-spy-2">
+						<ul class="mdl-navigation">
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#body">
+									<i class="zmdi zmdi-border-color pr-15"></i>
+									<span class="font-capitalize">about</span>
+								</a>
+							</li>
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#skills_sec">
+									<i class="zmdi zmdi-cutlery pr-15"></i>
+									<span class="font-capitalize">skills</span>
+								</a>
+							</li>
+
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#experience_sec">
+									<i class="zmdi zmdi-shield-check pr-15"></i>
+									<span class="font-capitalize">experience</span>
+								</a>
+							</li>
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#education_sec">
+									<i class="zmdi zmdi-library pr-15"></i>
+									<span class="font-capitalize">education</span>
+								</a>
+							</li>
+							<li>
+								<a class="mdl-navigation__link border-top-sep" data-scroll href="#portfolio_sec">
+									<i class="zmdi zmdi-case pr-15"></i>
+									<span class="font-capitalize">project done</span>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="drawer-footer mt-50 mb-30 text-center">
+						<p class="font-12 mt-10">TRI ARIYANTO &copy; 2016.</p>
+					</div>
+				</div>
+			</div>
+			<!--/Left Sidebar-->
+
+			<!--Main Content-->
+			<div class="main-content relative">
+				<div class="container">
+
+					<!--Portfolio Sec-->
+					<section id="portfolio_sec" class="portfolio-sec sec-pad-top-sm">
+						<div class="mb-5">
+							<h2 class="pull-left float-none-xs">Portofolio</h2>
+							<div class="filter-wrap pull-right float-none-xs">
+								<!-- Portfolio Filters -->
+								<ul id="filters">
+									<li><a id="all" href="#" data-filter="*" class="active">all</a></li>
+								</ul>
+								<!--/Portfolio Filters -->
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+
+						<!-- Seven Retail / Golden Lamian App -->
+						<section class="about-sec mb-20">
+							<div class="mdl-card mdl-shadow--2dp mb-10">
+								<div class="row">
+									<div class="info-wrap">
+										<h1>Seven Retail Group (Mobile Apps & CMS)</h1>
+										<h5 class="mt-20 font-grey">PT.SNI / PT.PBJ (2024)</h5>
+										<div class="profile-desc mt-10">A mobile application for both iOS and Android called the Seven
+											Retail App.</div>
+										<div class="profile-desc">It’s a cross-brand application that combines membership and loyalty
+											programs across multiple brands.</div>
+
+										<h5 class="mt-10 font-grey">Technologys</h5>
+									</div>
+									<ul class="profile-wrap mt-10">
+										<li>
+											<button class="btn btn-success">Flutter</button>
+											<button class="btn btn-success">Firebase</button>
+											<button class="btn btn-success">Node.Js</button>
+											<button class="btn btn-primary">iOS</button>
+											<button class="btn btn-info">APK</button>
+											<button class="btn btn-success">Svelte</button>
+											<button class="btn btn-success">CSS</button>
+											<button class="btn btn">Postgress</button>
+											<button class="btn btn-warning">AWS</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="card mdl-shadow--2dp pt-2" style="background-color: white;">
+								<div class="gallery-wrap mb-30">
+									<div class="portfolio-wrap project-gallery">
+										<ul id="portfolio" class="portf auto-construct  project-gallery" data-col="4">
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+												<div class="light-img-wrap mdl-card__title pa-10">
+													<img class="img-responsive" src="projekdone/2024/sevenretail.png" style="max-height: 100%;"
+														alt="Image description" />
+													<div class="light-img-overlay"></div>
+												</div>
+											</li>
+											<li class="item mdl-card mdl-shadow--2dp pa-0 branding">
+												<div class="light-img-wrap mdl-card__title pa-10">
+													<img class="img-responsive" src="projekdone/sni/2hris&app/home_v2.png"
+														style="max-height: 100%;" alt="Image description" />
+													<div class="light-img-overlay"></div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+
+					</section>
+					<!--/Portfolio Sec-->
+
+				</div>
+			</div>
+			<!--/Main Content-->
+
+		</div>
+	</div>
+	<!--/Main Wrapper-->
+
+	<!-- Modal Image Viewer -->
+	<div id="imageModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="modalImage">
+		<span class="prev"
+			style="position:absolute;left:20px;top:50%;font-size:40px;color:white;cursor:pointer;">&#10094;</span>
+		<span class="next"
+			style="position:absolute;right:20px;top:50%;font-size:40px;color:white;cursor:pointer;">&#10095;</span>
+	</div>
+
+
+	<script>
+		$(document).ready(function () {
+			let $modal = $('#imageModal');
+			let $modalImg = $('#modalImage');
+			let currentIndex = 0;
+			let imageList = [];
+
+			// Ambil semua image yang ada di dalam 1 project-gallery
+			const $images = $('.portfolio-wrap.project-gallery img');
+			$images.each(function () {
+				imageList.push($(this).attr('src'));
+			});
+
+			$images.css('cursor', 'pointer').on('click', function () {
+				currentIndex = $images.index(this); // index saat ini
+				$modal.show();
+				$modalImg.attr('src', imageList[currentIndex]);
+			});
+
+			// Tombol close
+			$('.modal .close, #imageModal').on('click', function (e) {
+				if (e.target !== this && !$(e.target).is('.close')) return;
+				$modal.hide();
+			});
+
+			// Tombol next
+			$('.modal .next').on('click', function () {
+				currentIndex = (currentIndex + 1) % imageList.length;
+				$modalImg.attr('src', imageList[currentIndex]);
+			});
+
+			// Tombol prev
+			$('.modal .prev').on('click', function () {
+				currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+				$modalImg.attr('src', imageList[currentIndex]);
+			});
+		});
+	</script>
+
+
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/material.min.js"></script>
+	<script src="js/jQuery.appear.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/smooth-scroll.js"></script>
+	<script src="js/isotope.js"></script>
+	<script src="js/lightgallery-all.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/froogaloop2.min.js"></script>
+	<script src="js/jquery.slimscroll.js"></script>
+	<script src="js/init.js"></script>
+</body>
+
+</html>
